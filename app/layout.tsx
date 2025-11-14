@@ -1,6 +1,6 @@
 import '@mantine/core/styles.css';
 import './globals.css';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Rubik } from 'next/font/google';
 import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/core';
 import { theme } from './theme';
@@ -11,11 +11,12 @@ export const metadata: Metadata = {
   title: 'MyGardenerMel - Your Friendly Local Gardener in Norwich',
   description: 'Professional garden maintenance and landscaping services in Norwich, England. Experienced, reliable gardening services for your home.',
   keywords: ['gardening', 'landscaping', 'Norwich', 'garden maintenance', 'local gardener'],
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
