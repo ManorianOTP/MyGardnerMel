@@ -1,0 +1,55 @@
+.section {
+  padding: 4rem 1rem;
+  background-color: #fcfbf0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  color: #145233;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-color: white;
+  border-color: #e2e1cf;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(20, 82, 51, 0.1);
+}
+
+.imageSection {
+  height: 250px;
+  background: linear-gradient(135deg, #e2e1cf 0%, #d0e8da 100%);
+}
+
+.imagePlaceholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #145233;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}

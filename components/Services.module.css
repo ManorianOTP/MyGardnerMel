@@ -1,0 +1,52 @@
+.section {
+  padding: 4rem 1rem;
+  background-color: white;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  color: #145233;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #fcfbf0;
+  border: 2px solid #e2e1cf;
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(20, 82, 51, 0.1);
+  border-color: #145233;
+}
+
+.icon {
+  margin-bottom: 1rem;
+}
+
+.cardTitle {
+  color: #145233;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}

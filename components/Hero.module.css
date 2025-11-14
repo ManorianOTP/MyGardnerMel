@@ -1,0 +1,70 @@
+.hero {
+  background: linear-gradient(135deg, #e2e1cf 0%, #fcfbf0 100%);
+  padding: 6rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(20, 82, 51, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(20, 82, 51, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #145233;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: #145233;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.description {
+  color: #2d5a3d;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 1rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
