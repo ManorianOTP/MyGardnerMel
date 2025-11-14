@@ -44,3 +44,17 @@
     padding: 1.5rem;
   }
 }
+
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .formContainer {
+    padding: 1rem;
+  }
+}

@@ -52,4 +52,22 @@
   .title {
     font-size: 2rem;
   }
+
+  .imageSection {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .imageSection {
+    height: 180px;
+  }
 }

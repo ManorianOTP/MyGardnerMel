@@ -8,12 +8,12 @@ export function Header() {
   return (
     <Box component="header" className={classes.header}>
       <Container size="lg">
-        <Group justify="space-between" h={80}>
+        <Group justify="space-between" h={{ base: 60, sm: 80 }}>
           <Title order={1} className={classes.logo}>
             MyGardenerMel
           </Title>
 
-          <Group gap="md">
+          <Group gap="xs" className={classes.buttonGroup}>
             <Button
               component="a"
               href="https://www.instagram.com/mygardenermel"
@@ -22,8 +22,11 @@ export function Header() {
               variant="subtle"
               color="green.9"
               leftSection={<IconBrandInstagram size={20} />}
+              px={{ base: 'xs', sm: 'md' }}
+              aria-label="Instagram"
+              className={classes.headerButton}
             >
-              Instagram
+              <span className={classes.buttonText}>Instagram</span>
             </Button>
             <Button
               component="a"
@@ -33,8 +36,11 @@ export function Header() {
               variant="subtle"
               color="green.9"
               leftSection={<IconBrandFacebook size={20} />}
+              px={{ base: 'xs', sm: 'md' }}
+              aria-label="Facebook"
+              className={classes.headerButton}
             >
-              Facebook
+              <span className={classes.buttonText}>Facebook</span>
             </Button>
             <Button
               component="a"
@@ -42,8 +48,11 @@ export function Header() {
               variant="filled"
               color="green.9"
               leftSection={<IconMail size={20} />}
+              px={{ base: 'xs', sm: 'md' }}
+              aria-label="Get in Touch"
+              className={classes.headerButton}
             >
-              Get in Touch
+              <span className={classes.buttonText}>Get in Touch</span>
             </Button>
           </Group>
         </Group>
