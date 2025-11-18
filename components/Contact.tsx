@@ -26,7 +26,7 @@ export function Contact() {
                   <Box>
                     <Text fw={600}>Service Area</Text>
                     <Text size="sm" c="dimmed">
-                      Norwich and surrounding areas (40km radius)
+                      Norwich and surrounding areas (20km radius)
                     </Text>
                   </Box>
                 </Group>

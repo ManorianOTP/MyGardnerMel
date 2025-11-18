@@ -17,7 +17,7 @@ const stats = [
   },
   {
     icon: IconMapPin,
-    value: '40km',
+    value: '20km',
     label: 'Service Area',
   },
 ];

@@ -2,6 +2,7 @@
 
 import { Container, Group, Button, Box, Title } from '@mantine/core';
 import { IconBrandInstagram, IconBrandFacebook, IconMail } from '@tabler/icons-react';
+import Image from 'next/image';
 import classes from './Header.module.css';
 
 export function Header() {
@@ -9,9 +10,18 @@ export function Header() {
     <Box component="header" className={classes.header}>
       <Container size="lg">
         <Group justify="space-between" h={{ base: 60, sm: 80 }}>
-          <Title order={1} className={classes.logo}>
-            MyGardenerMel
-          </Title>
+          <Group gap="md">
+            <Image
+              src="/images/myrons_logo-modified.png"
+              alt="MyGardenerMel Logo"
+              width={60}
+              height={60}
+              style={{ objectFit: 'contain' }}
+            />
+            <Title order={1} className={classes.logo}>
+              MyGardenerMel
+            </Title>
+          </Group>
 
           <Group gap="xs" className={classes.buttonGroup}>
             <Button
