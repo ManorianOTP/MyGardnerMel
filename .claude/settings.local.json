@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd comprehensive mobile optimizations across all components\n\n- Header: Hide button text on mobile, show icons only with centered alignment and reduced padding\n- Hero: Add 480px breakpoint with smaller font sizes and adjusted padding\n- All sections: Progressive font size and padding reduction for tablet (768px) and mobile (480px)\n- Footer: Stack content vertically on mobile with larger touch targets (44px)\n- Global: Add viewport meta tags, touch-friendly button sizes, improved tap highlights, and prevent horizontal scroll\n- Accessibility: Add aria-labels to header buttons for screen readers\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

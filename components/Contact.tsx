@@ -39,10 +39,10 @@ export function Contact() {
                       size="sm"
                       c="dimmed"
                       component="a"
-                      href="tel:+44"
+                      href="tel:+447927491042"
                       className={classes.link}
                     >
-                      Call for consultation
+                      07927 491042
                     </Text>
                   </Box>
                 </Group>
@@ -55,10 +55,10 @@ export function Contact() {
                       size="sm"
                       c="dimmed"
                       component="a"
-                      href="mailto:contact@mygardenermel.com"
+                      href="mailto:MYGARDENERMEL@GMAIL.COM"
                       className={classes.link}
                     >
-                      contact@mygardenermel.com
+                      MYGARDENERMEL@GMAIL.COM
                     </Text>
                   </Box>
                 </Group>

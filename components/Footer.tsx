@@ -13,7 +13,7 @@ export function Footer() {
 
           <div className={classes.socialLinks}>
             <a
-              href="https://www.instagram.com/mygardenermel"
+              href="https://www.instagram.com/my.gardener.mel/"
               target="_blank"
               rel="noopener noreferrer"
               className={classes.socialLink}
@@ -36,7 +36,7 @@ export function Footer() {
               </svg>
             </a>
             <a
-              href="https://www.facebook.com/mygardenermel"
+              href="https://www.facebook.com/profile.php?id=61577685542601"
               target="_blank"
               rel="noopener noreferrer"
               className={classes.socialLink}

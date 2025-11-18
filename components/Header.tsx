@@ -16,7 +16,7 @@ export function Header() {
           <Group gap="xs" className={classes.buttonGroup}>
             <Button
               component="a"
-              href="https://www.instagram.com/mygardenermel"
+              href="https://www.instagram.com/my.gardener.mel/"
               target="_blank"
               rel="noopener noreferrer"
               variant="subtle"
@@ -30,7 +30,7 @@ export function Header() {
             </Button>
             <Button
               component="a"
-              href="https://www.facebook.com/mygardenermel"
+              href="https://www.facebook.com/profile.php?id=61577685542601"
               target="_blank"
               rel="noopener noreferrer"
               variant="subtle"
