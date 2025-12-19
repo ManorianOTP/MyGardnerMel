@@ -13,14 +13,14 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Hedge Trimming',
-    description: 'Whether you\'re looking for a sharp, formal finish or a more natural shape, I will work carefully and efficiently to achieve the outcome you desire.\n\nAll cuttings will be cleared away, leaving your garden tidy and your hedges looking their best.',
+    title: 'Lawn Restoration',
+    description: 'Is your lawn looking tired, patchy, or overrun with weeds?\n\nMy professional lawn restoration service is designed to revive your grass and restore a healthy, lush finish that you can be proud of.',
     badge: 'Before & After',
   },
   {
     id: 3,
-    title: 'Lawn Restoration',
-    description: 'Is your lawn looking tired, patchy, or overrun with weeds?\n\nMy professional lawn restoration service is designed to revive your grass and restore a healthy, lush finish that you can be proud of.',
+    title: 'Hedge Trimming',
+    description: 'Whether you\'re looking for a sharp, formal finish or a more natural shape, I will work carefully and efficiently to achieve the outcome you desire.\n\nAll cuttings will be cleared away, leaving your garden tidy and your hedges looking their best.',
     badge: 'Before & After',
   },
 ];
