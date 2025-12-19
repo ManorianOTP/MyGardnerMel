@@ -71,6 +71,14 @@ export function Gallery() {
                       afterImageScale={1.3}
                       alt={project.title}
                     />
+                  ) : project.id === 3 ? (
+                    <BeforeAfterSlider
+                      beforeImage="/images/Garden before.png"
+                      afterImage="/images/Garden after.png"
+                      afterImagePosition="70% center"
+                      afterImageScale={1.2}
+                      alt={project.title}
+                    />
                   ) : (
                     <Box className={classes.imagePlaceholder}>
                       <Text size="sm" c="dimmed">
