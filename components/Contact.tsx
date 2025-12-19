@@ -103,10 +103,10 @@ export function Contact() {
                       size="sm"
                       c="dimmed"
                       component="a"
-                      href="mailto:MYGARDENERMEL@GMAIL.COM"
+                      href="mailto:MyGardenerMel@gmail.com"
                       className={classes.link}
                     >
-                      MYGARDENERMEL@GMAIL.COM
+                      MyGardenerMel@gmail.com
                     </Text>
                   </Box>
                 </Group>

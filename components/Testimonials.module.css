@@ -57,7 +57,7 @@
 
 @media (max-width: 480px) {
   .section {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 3rem;
   }
 
   .title {
@@ -66,5 +66,9 @@
 
   .text {
     font-size: 0.95rem;
+  }
+
+  .carousel {
+    height: 520px;
   }
 }
