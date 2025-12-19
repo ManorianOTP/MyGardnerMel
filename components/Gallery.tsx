@@ -2,6 +2,7 @@
 
 import { Container, Title, Text, SimpleGrid, Card, Badge, Box, Stack } from '@mantine/core';
 import classes from './Gallery.module.css';
+import { BeforeAfterSlider } from './BeforeAfterSlider';
 
 const projects = [
   {
@@ -53,11 +54,19 @@ export function Gallery() {
                 aria-label={`${project.title}: ${project.description}`}
               >
                 <Card.Section className={classes.imageSection}>
-                  <Box className={classes.imagePlaceholder}>
-                    <Text size="sm" c="dimmed">
-                      {project.title}
-                    </Text>
-                  </Box>
+                  {project.id === 1 ? (
+                    <BeforeAfterSlider
+                      beforeImage="/images/Bushes before.jpg"
+                      afterImage="/images/Bushes after.jpg"
+                      alt={project.title}
+                    />
+                  ) : (
+                    <Box className={classes.imagePlaceholder}>
+                      <Text size="sm" c="dimmed">
+                        {project.title}
+                      </Text>
+                    </Box>
+                  )}
                 </Card.Section>
 
                 <Stack gap="sm" mt="md">
