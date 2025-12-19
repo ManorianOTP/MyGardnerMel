@@ -1,12 +1,11 @@
 'use client';
 
-import { Container, Title, Text, SimpleGrid, Card, ThemeIcon, Stack, Box } from '@mantine/core';
+import { Container, Title, Text, Card, ThemeIcon, Stack, Box } from '@mantine/core';
 import {
   IconLeaf,
   IconTools,
   IconHeart,
   IconClock,
-  IconShieldCheck,
   IconStar,
 } from '@tabler/icons-react';
 import classes from './Services.module.css';
@@ -33,11 +32,6 @@ const services = [
     description: 'Punctual and dependable. I show up when promised and complete work to the highest standard.',
   },
   {
-    icon: IconShieldCheck,
-    title: 'Fully Insured',
-    description: 'Professional service with full public liability insurance for your peace of mind.',
-  },
-  {
     icon: IconStar,
     title: 'Customer Satisfaction',
     description: '100% customer satisfaction guaranteed. I\'m not happy until you\'re delighted with your garden.',
@@ -58,7 +52,7 @@ export function Services() {
             </Text>
           </Box>
 
-          <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="lg">
+          <Box className={classes.grid}>
             {services.map((service) => (
               <Card
                 key={service.title}
@@ -90,7 +84,7 @@ export function Services() {
                 </Text>
               </Card>
             ))}
-          </SimpleGrid>
+          </Box>
         </Stack>
       </Container>
     </Box>
