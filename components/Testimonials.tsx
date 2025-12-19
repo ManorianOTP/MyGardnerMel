@@ -61,7 +61,7 @@ export function Testimonials() {
                       {testimonial.avatar}
                     </Avatar>
                     <Box>
-                      <Text fw={600} size="sm">
+                      <Text fw={600} size="sm" c="green.9">
                         {testimonial.name}
                       </Text>
                       <Text size="xs" c="dimmed">

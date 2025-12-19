@@ -74,7 +74,7 @@ export function Gallery() {
                   <Badge color="green.9" variant="light">
                     {project.badge}
                   </Badge>
-                  <Text fw={600} size="lg">
+                  <Text fw={600} size="lg" c="green.9">
                     {project.title}
                   </Text>
                   <Text size="sm" c="dimmed">

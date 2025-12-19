@@ -72,7 +72,7 @@ export function Contact() {
                 <Group gap="md">
                   <IconMapPin size={24} className={classes.icon} />
                   <Box>
-                    <Text fw={600}>Service Area</Text>
+                    <Text fw={600} c="green.9">Service Area</Text>
                     <Text size="sm" c="dimmed">
                       Norwich and surrounding areas (20km radius)
                     </Text>
@@ -82,7 +82,7 @@ export function Contact() {
                 <Group gap="md">
                   <IconPhone size={24} className={classes.icon} />
                   <Box>
-                    <Text fw={600}>Phone</Text>
+                    <Text fw={600} c="green.9">Phone</Text>
                     <Text
                       size="sm"
                       c="dimmed"
@@ -98,7 +98,7 @@ export function Contact() {
                 <Group gap="md">
                   <IconMail size={24} className={classes.icon} />
                   <Box>
-                    <Text fw={600}>Email</Text>
+                    <Text fw={600} c="green.9">Email</Text>
                     <Text
                       size="sm"
                       c="dimmed"
