@@ -24,7 +24,7 @@ const stats = [
 
 export function Stats() {
   return (
-    <Box className={classes.section}>
+    <Box component="section" className={classes.section} aria-label="Key statistics">
       <Container size="lg">
         <SimpleGrid cols={{ base: 1, sm: 3 }} spacing="xl">
           {stats.map((stat) => (
@@ -36,6 +36,7 @@ export function Stats() {
                   variant="light"
                   color="green.9"
                   className={classes.icon}
+                  aria-hidden="true"
                 >
                   <stat.icon size={40} stroke={1.5} />
                 </ThemeIcon>

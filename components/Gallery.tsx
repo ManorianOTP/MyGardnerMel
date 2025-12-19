@@ -26,11 +26,11 @@ const projects = [
 
 export function Gallery() {
   return (
-    <Box className={classes.section}>
+    <Box component="section" className={classes.section} aria-labelledby="gallery-heading">
       <Container size="lg">
         <Stack gap="xl">
           <Box className={classes.header}>
-            <Title order={2} className={classes.title}>
+            <Title id="gallery-heading" order={2} className={classes.title}>
               My Work
             </Title>
             <Text size="lg" c="dimmed" className={classes.subtitle}>
@@ -38,7 +38,7 @@ export function Gallery() {
             </Text>
           </Box>
 
-          <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="lg">
+          <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="lg" role="list">
             {projects.map((project) => (
               <Card
                 key={project.id}
@@ -47,6 +47,10 @@ export function Gallery() {
                 radius="md"
                 withBorder
                 className={classes.card}
+                component="article"
+                tabIndex={0}
+                role="listitem"
+                aria-label={`${project.title}: ${project.description}`}
               >
                 <Card.Section className={classes.imageSection}>
                   <Box className={classes.imagePlaceholder}>

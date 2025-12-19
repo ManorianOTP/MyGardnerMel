@@ -50,3 +50,33 @@ a {
 body {
   overflow-x: hidden;
 }
+
+/* Enhanced keyboard focus styles for accessibility */
+*:focus-visible {
+  outline: 3px solid #44a569;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #44a569;
+  outline-offset: 2px;
+}
+
+/* Remove default focus for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Ensure links are distinguishable */
+a:not([class]) {
+  text-decoration: underline;
+}
+
+a:not([class]):hover {
+  text-decoration: none;
+}

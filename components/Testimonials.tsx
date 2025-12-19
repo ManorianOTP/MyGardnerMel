@@ -21,11 +21,11 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <Box className={classes.section}>
+    <Box component="section" className={classes.section} aria-labelledby="testimonials-heading">
       <Container size="lg">
         <Stack gap="xl">
           <Box className={classes.header}>
-            <Title order={2} className={classes.title}>
+            <Title id="testimonials-heading" order={2} className={classes.title}>
               What My Customers Say
             </Title>
             <Text size="lg" c="dimmed" className={classes.subtitle}>
@@ -41,9 +41,12 @@ export function Testimonials() {
                 padding="xl"
                 radius="md"
                 className={classes.card}
+                component="article"
+                role="article"
+                aria-label={`Testimonial from ${testimonial.name}`}
               >
                 <Stack gap="md">
-                  <IconQuote size={40} className={classes.quoteIcon} />
+                  <IconQuote size={40} className={classes.quoteIcon} aria-hidden="true" />
 
                   <Text size="md" className={classes.text}>
                     "{testimonial.text}"

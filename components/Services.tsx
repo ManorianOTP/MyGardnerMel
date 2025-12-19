@@ -46,11 +46,11 @@ const services = [
 
 export function Services() {
   return (
-    <Box className={classes.section}>
+    <Box component="section" className={classes.section} aria-labelledby="services-heading">
       <Container size="lg">
         <Stack gap="xl">
           <Box className={classes.header}>
-            <Title order={2} className={classes.title}>
+            <Title id="services-heading" order={2} className={classes.title}>
               Why Choose My Service?
             </Title>
             <Text size="lg" c="dimmed" className={classes.subtitle}>
@@ -66,6 +66,10 @@ export function Services() {
                 padding="xl"
                 radius="md"
                 className={classes.card}
+                component="article"
+                tabIndex={0}
+                role="article"
+                aria-label={`${service.title}: ${service.description}`}
               >
                 <ThemeIcon
                   size={60}
