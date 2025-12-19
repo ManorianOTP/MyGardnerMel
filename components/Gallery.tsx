@@ -13,14 +13,14 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Lawn Restoration',
-    description: 'Professional lawn care and maintenance',
+    title: 'Hedge Trimming',
+    description: 'Precise hedge shaping and maintenance',
     badge: 'Before & After',
   },
   {
     id: 3,
-    title: 'Hedge Trimming',
-    description: 'Precise hedge shaping and maintenance',
+    title: 'Lawn Restoration',
+    description: 'Professional lawn care and maintenance',
     badge: 'Before & After',
   },
 ];
@@ -63,20 +63,20 @@ export function Gallery() {
                     />
                   ) : project.id === 2 ? (
                     <BeforeAfterSlider
+                      beforeImage="/images/Garden before.png"
+                      afterImage="/images/Garden after.png"
+                      afterImagePosition="70% center"
+                      afterImageScale={1.2}
+                      alt={project.title}
+                    />
+                  ) : project.id === 3 ? (
+                    <BeforeAfterSlider
                       beforeImage="/images/Before shed.png"
                       afterImage="/images/After shed.png"
                       beforeImagePosition="100% 20%"
                       afterImagePosition="33% 38%"
                       beforeImageScale={1.3}
                       afterImageScale={1.3}
-                      alt={project.title}
-                    />
-                  ) : project.id === 3 ? (
-                    <BeforeAfterSlider
-                      beforeImage="/images/Garden before.png"
-                      afterImage="/images/Garden after.png"
-                      afterImagePosition="70% center"
-                      afterImageScale={1.2}
                       alt={project.title}
                     />
                   ) : (
