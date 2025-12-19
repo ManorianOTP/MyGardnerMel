@@ -8,9 +8,17 @@ interface BeforeAfterSliderProps {
   beforeImage: string;
   afterImage: string;
   alt?: string;
+  beforeImagePosition?: string;
+  afterImagePosition?: string;
 }
 
-export function BeforeAfterSlider({ beforeImage, afterImage, alt = 'Before and after comparison' }: BeforeAfterSliderProps) {
+export function BeforeAfterSlider({
+  beforeImage,
+  afterImage,
+  alt = 'Before and after comparison',
+  beforeImagePosition = 'center center',
+  afterImagePosition = 'center center'
+}: BeforeAfterSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -74,6 +82,7 @@ export function BeforeAfterSlider({ beforeImage, afterImage, alt = 'Before and a
           src={afterImage}
           alt={`${alt} - after`}
           className={classes.image}
+          style={{ objectPosition: afterImagePosition }}
         />
         <Box className={classes.label} style={{ right: '1rem' }}>
           After
@@ -89,6 +98,7 @@ export function BeforeAfterSlider({ beforeImage, afterImage, alt = 'Before and a
           src={beforeImage}
           alt={`${alt} - before`}
           className={classes.image}
+          style={{ objectPosition: beforeImagePosition }}
         />
         <Box className={classes.label} style={{ left: '1rem' }}>
           Before

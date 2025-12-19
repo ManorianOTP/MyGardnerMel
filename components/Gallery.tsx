@@ -58,6 +58,7 @@ export function Gallery() {
                     <BeforeAfterSlider
                       beforeImage="/images/Bushes before.jpg"
                       afterImage="/images/Bushes after.jpg"
+                      afterImagePosition="center 37%"
                       alt={project.title}
                     />
                   ) : (
