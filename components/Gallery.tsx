@@ -8,7 +8,7 @@ const projects = [
   {
     id: 1,
     title: 'Garden Transformation',
-    description: 'Complete overhaul from overgrown to pristine',
+    description: 'Garden restoration to oversimplify the overgrown and restore outdoor spaces to a manageable state. Whether its brambles befuddling your beds or nettles becoming a nuisance I have the tools required to get the job done.',
     badge: 'Before & After',
   },
   {
