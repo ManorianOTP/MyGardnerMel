@@ -10,7 +10,7 @@ export function Header() {
     <Box component="header" className={classes.header}>
       <Container size="lg">
         <Group justify="space-between" h={{ base: 60, sm: 80 }}>
-          <Group gap={{ base: 'xs', sm: 'md' }}>
+          <Group gap="sm">
             <Image
               src="/images/myrons_logo-modified.png"
               alt="MyGardenerMel Logo"
@@ -33,7 +33,7 @@ export function Header() {
               variant="subtle"
               color="green.9"
               leftSection={<IconBrandInstagram size={20} />}
-              px={{ base: 'xs', sm: 'md' }}
+              px="sm"
               aria-label="Instagram"
               className={classes.headerButton}
             >
@@ -47,7 +47,7 @@ export function Header() {
               variant="subtle"
               color="green.9"
               leftSection={<IconBrandFacebook size={20} />}
-              px={{ base: 'xs', sm: 'md' }}
+              px="sm"
               aria-label="Facebook"
               className={classes.headerButton}
             >
@@ -59,7 +59,7 @@ export function Header() {
               variant="filled"
               color="green.9"
               leftSection={<IconMail size={20} />}
-              px={{ base: 'xs', sm: 'md' }}
+              px="sm"
               aria-label="Get in Touch"
               className={classes.headerButton}
             >
