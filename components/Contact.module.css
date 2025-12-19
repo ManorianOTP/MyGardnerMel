@@ -29,6 +29,15 @@
   padding: 2rem;
   border-radius: 8px;
   border: 2px solid #e2e1cf;
+  transition: border-color 0.3s ease;
+}
+
+/* Add hover state for desktop */
+@media (min-width: 769px) {
+  .formContainer:focus-within {
+    border-color: #145233;
+    box-shadow: 0 2px 8px rgba(20, 82, 51, 0.08);
+  }
 }
 
 @media (max-width: 768px) {
@@ -42,12 +51,30 @@
 
   .formContainer {
     padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  /* Improve link hit areas on mobile */
+  .link {
+    display: inline-block;
+    padding: 0.25rem 0;
+    min-height: 44px;
+    line-height: 44px;
+  }
+
+  /* Form label improvements for mobile */
+  .formContainer :global(.mantine-TextInput-label),
+  .formContainer :global(.mantine-Textarea-label) {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #145233;
   }
 }
 
 @media (max-width: 480px) {
   .section {
-    padding: 2rem 1rem;
+    padding: 2rem 0.75rem;
   }
 
   .title {
@@ -56,5 +83,50 @@
 
   .formContainer {
     padding: 1rem;
+    border-radius: 6px;
   }
+}
+
+/* Success alert styling with animation */
+.successAlert {
+  margin-bottom: 1rem;
+  animation: fadeInScale 0.3s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Submit button hover enhancement */
+.submitButton {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(20, 82, 51, 0.2);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Screen reader only utility class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }

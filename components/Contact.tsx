@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { Container, Title, Text, TextInput, Textarea, Button, Group, Box, Stack, Grid, Alert } from '@mantine/core';
+import { useState, useRef, useEffect } from 'react';
+import { Container, Title, Text, TextInput, Textarea, Button, Group, Box, Stack, Grid, Alert, LoadingOverlay } from '@mantine/core';
 import { IconMail, IconPhone, IconMapPin, IconSend, IconCheck, IconAlertCircle } from '@tabler/icons-react';
 import { useForm } from '@mantine/form';
 import { zodResolver } from 'mantine-form-zod-resolver';
@@ -12,6 +12,7 @@ export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const formRef = useRef<HTMLDivElement>(null);
 
   const form = useForm<ContactFormData>({
     initialValues: {
@@ -22,6 +23,31 @@ export function Contact() {
     },
     validate: zodResolver(contactFormSchema),
   });
+
+  useEffect(() => {
+    // Check if URL has #contact hash for mobile scroll
+    if (window.location.hash === '#contact' && formRef.current) {
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
+        setTimeout(() => {
+          formRef.current?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 100);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    // Auto-clear success message when user starts typing again
+    if (submitStatus === 'success') {
+      const hasValues = form.values.name || form.values.email || form.values.phone || form.values.message;
+      if (hasValues) {
+        setSubmitStatus('idle');
+      }
+    }
+  }, [form.values, submitStatus]);
 
   const handleSubmit = async (values: ContactFormData) => {
     setIsSubmitting(true);
@@ -44,8 +70,15 @@ export function Contact() {
       setSubmitStatus('success');
       form.reset();
 
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubmitStatus('idle'), 5000);
+      // Scroll to top of form to show success message on mobile
+      if (window.innerWidth < 768 && formRef.current) {
+        setTimeout(() => {
+          formRef.current?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 100);
+      }
     } catch (error) {
       setSubmitStatus('error');
       setErrorMessage(error instanceof Error ? error.message : 'Failed to send message');
@@ -54,9 +87,9 @@ export function Contact() {
     }
   };
   return (
-    <Box component="section" className={classes.section} id="contact" aria-labelledby="contact-heading">
+    <Box component="section" className={classes.section} id="contact" aria-labelledby="contact-heading" ref={formRef}>
       <Container size="lg">
-        <Grid gutter="xl">
+        <Grid gutter={{ base: 'md', sm: 'lg', md: 'xl' }}>
           <Grid.Col span={{ base: 12, md: 6 }}>
             <Stack gap="xl">
               <Box>
@@ -69,9 +102,9 @@ export function Contact() {
               </Box>
 
               <Stack gap="md">
-                <Group gap="md">
+                <Group gap="md" wrap="nowrap" align="flex-start">
                   <IconMapPin size={24} className={classes.icon} />
-                  <Box>
+                  <Box style={{ flex: 1 }}>
                     <Text fw={600} c="green.9">Service Area</Text>
                     <Text size="sm" c="dimmed">
                       Norwich and surrounding areas (20km radius)
@@ -79,9 +112,9 @@ export function Contact() {
                   </Box>
                 </Group>
 
-                <Group gap="md">
+                <Group gap="md" wrap="nowrap" align="flex-start">
                   <IconPhone size={24} className={classes.icon} />
-                  <Box>
+                  <Box style={{ flex: 1 }}>
                     <Text fw={600} c="green.9">Phone</Text>
                     <Text
                       size="sm"
@@ -95,9 +128,9 @@ export function Contact() {
                   </Box>
                 </Group>
 
-                <Group gap="md">
+                <Group gap="md" wrap="nowrap" align="flex-start">
                   <IconMail size={24} className={classes.icon} />
-                  <Box>
+                  <Box style={{ flex: 1 }}>
                     <Text fw={600} c="green.9">Email</Text>
                     <Text
                       size="sm"
@@ -115,17 +148,73 @@ export function Contact() {
           </Grid.Col>
 
           <Grid.Col span={{ base: 12, md: 6 }}>
-            <Box className={classes.formContainer}>
-              <form onSubmit={form.onSubmit(handleSubmit)}>
+            <Box className={classes.formContainer} style={{ position: 'relative' }}>
+              <LoadingOverlay
+                visible={isSubmitting}
+                zIndex={1000}
+                overlayProps={{
+                  radius: 'sm',
+                  blur: 2,
+                  color: '#fcfbf0',
+                  opacity: 0.7
+                }}
+                loaderProps={{
+                  color: 'green.9',
+                  size: 'lg',
+                  type: 'dots'
+                }}
+              />
+              <form
+                onSubmit={form.onSubmit(handleSubmit)}
+                aria-busy={isSubmitting}
+                aria-describedby={submitStatus === 'error' ? 'form-error' : undefined}
+              >
                 <Stack gap="md">
+                  {isSubmitting && (
+                    <div role="status" aria-live="polite" className={classes['sr-only']}>
+                      Sending your message, please wait...
+                    </div>
+                  )}
                   {submitStatus === 'success' && (
-                    <Alert icon={<IconCheck size={16} />} color="green" title="Success!" role="status" aria-live="polite">
-                      Your message has been sent successfully. I'll get back to you soon!
+                    <Alert
+                      icon={<IconCheck size={20} />}
+                      color="green"
+                      title="Message Sent Successfully!"
+                      withCloseButton
+                      onClose={() => setSubmitStatus('idle')}
+                      role="status"
+                      aria-live="polite"
+                      className={classes.successAlert}
+                      styles={{
+                        root: {
+                          backgroundColor: '#e8f5e9',
+                          border: '2px solid #145233',
+                        },
+                        title: {
+                          color: '#145233',
+                          fontSize: '1.1rem',
+                          fontWeight: 600,
+                        },
+                        message: {
+                          color: '#2d5a3d',
+                        }
+                      }}
+                    >
+                      <Text size="sm">
+                        Thank you for reaching out! I'll review your message and get back to you within 24 hours.
+                      </Text>
                     </Alert>
                   )}
 
                   {submitStatus === 'error' && (
-                    <Alert icon={<IconAlertCircle size={16} />} color="red" title="Error" role="alert">
+                    <Alert
+                      id="form-error"
+                      icon={<IconAlertCircle size={16} />}
+                      color="red"
+                      title="Error"
+                      role="alert"
+                      aria-live="assertive"
+                    >
                       {errorMessage}
                     </Alert>
                   )}
@@ -134,7 +223,10 @@ export function Contact() {
                     label="Your Name"
                     placeholder="John Smith"
                     required
-                    size="md"
+                    size="lg"
+                    styles={{
+                      input: { fontSize: '16px', minHeight: '48px' }
+                    }}
                     {...form.getInputProps('name')}
                   />
 
@@ -143,7 +235,10 @@ export function Contact() {
                     placeholder="john@example.com"
                     type="email"
                     required
-                    size="md"
+                    size="lg"
+                    styles={{
+                      input: { fontSize: '16px', minHeight: '48px' }
+                    }}
                     {...form.getInputProps('email')}
                   />
 
@@ -151,7 +246,10 @@ export function Contact() {
                     label="Phone Number"
                     placeholder="+44 7XXX XXXXXX"
                     type="tel"
-                    size="md"
+                    size="lg"
+                    styles={{
+                      input: { fontSize: '16px', minHeight: '48px' }
+                    }}
                     {...form.getInputProps('phone')}
                   />
 
@@ -170,7 +268,10 @@ export function Contact() {
                     placeholder="Tell me about your garden project..."
                     required
                     minRows={4}
-                    size="md"
+                    size="lg"
+                    styles={{
+                      input: { fontSize: '16px' }
+                    }}
                     {...form.getInputProps('message')}
                   />
 
@@ -178,12 +279,13 @@ export function Contact() {
                     type="submit"
                     size="lg"
                     fullWidth
-                    leftSection={<IconSend size={20} />}
+                    leftSection={isSubmitting ? null : <IconSend size={20} />}
                     color="green.9"
                     loading={isSubmitting}
                     disabled={isSubmitting}
+                    className={classes.submitButton}
                   >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {isSubmitting ? 'Sending your message...' : 'Send Message'}
                   </Button>
                 </Stack>
               </form>
