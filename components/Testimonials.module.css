@@ -23,13 +23,7 @@
 .card {
   background-color: white;
   border: 2px solid #e2e1cf;
-  transition: transform 0.2s, box-shadow 0.2s;
   height: 100%;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(20, 82, 51, 0.15);
 }
 
 .quoteIcon {
@@ -43,7 +37,15 @@
   font-style: italic;
 }
 
+.carousel {
+  height: 300px;
+}
+
 @media (max-width: 768px) {
+  .carousel {
+    height: 500px;
+  }
+
   .section {
     padding: 3rem 1rem;
   }
