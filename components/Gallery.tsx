@@ -8,19 +8,19 @@ const projects = [
   {
     id: 1,
     title: 'Garden Transformation',
-    description: 'Garden restoration to oversimplify the overgrown and restore outdoor spaces to a manageable state. Whether its brambles befuddling your beds or nettles becoming a nuisance I have the tools required to get the job done.',
+    description: 'Garden restoration to oversimplify the overgrown and restore outdoor spaces to a manageable state.\n\nWhether its brambles befuddling your beds or nettles becoming a nuisance I have the tools required to get the job done.',
     badge: 'Before & After',
   },
   {
     id: 2,
     title: 'Hedge Trimming',
-    description: 'Precise hedge shaping and maintenance',
+    description: 'Whether you\'re looking for a sharp, formal finish or a more natural shape, I will work carefully and efficiently to achieve the outcome you desire.\n\nAll cuttings will be cleared away, leaving your garden tidy and your hedges looking their best.',
     badge: 'Before & After',
   },
   {
     id: 3,
     title: 'Lawn Restoration',
-    description: 'Professional lawn care and maintenance',
+    description: 'Is your lawn looking tired, patchy, or overrun with weeds?\n\nMy professional lawn restoration service is designed to revive your grass and restore a healthy, lush finish that you can be proud of.',
     badge: 'Before & After',
   },
 ];
@@ -95,7 +95,7 @@ export function Gallery() {
                   <Text fw={600} size="lg" c="green.9">
                     {project.title}
                   </Text>
-                  <Text size="sm" c="dimmed">
+                  <Text size="sm" c="dimmed" style={{ whiteSpace: 'pre-line' }}>
                     {project.description}
                   </Text>
                 </Stack>
