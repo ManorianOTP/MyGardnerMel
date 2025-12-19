@@ -10,6 +10,8 @@ interface BeforeAfterSliderProps {
   alt?: string;
   beforeImagePosition?: string;
   afterImagePosition?: string;
+  beforeImageScale?: number;
+  afterImageScale?: number;
 }
 
 export function BeforeAfterSlider({
@@ -17,7 +19,9 @@ export function BeforeAfterSlider({
   afterImage,
   alt = 'Before and after comparison',
   beforeImagePosition = 'center center',
-  afterImagePosition = 'center center'
+  afterImagePosition = 'center center',
+  beforeImageScale = 1,
+  afterImageScale = 1
 }: BeforeAfterSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -82,7 +86,11 @@ export function BeforeAfterSlider({
           src={afterImage}
           alt={`${alt} - after`}
           className={classes.image}
-          style={{ objectPosition: afterImagePosition }}
+          style={{
+            objectPosition: afterImagePosition,
+            transform: afterImageScale !== 1 ? `scale(${afterImageScale})` : undefined,
+            transformOrigin: afterImagePosition
+          }}
         />
         <Box className={classes.label} style={{ right: '1rem' }}>
           After
@@ -98,7 +106,11 @@ export function BeforeAfterSlider({
           src={beforeImage}
           alt={`${alt} - before`}
           className={classes.image}
-          style={{ objectPosition: beforeImagePosition }}
+          style={{
+            objectPosition: beforeImagePosition,
+            transform: beforeImageScale !== 1 ? `scale(${beforeImageScale})` : undefined,
+            transformOrigin: beforeImagePosition
+          }}
         />
         <Box className={classes.label} style={{ left: '1rem' }}>
           Before
