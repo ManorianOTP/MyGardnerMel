@@ -35,7 +35,7 @@ export function Gallery() {
               My Work
             </Title>
             <Text size="lg" c="dimmed" className={classes.subtitle}>
-              See the transformations I've achieved for satisfied customers across Norwich
+              Use the sliders to see the transformations I've achieved for satisfied customers across Norwich
             </Text>
           </Box>
 
