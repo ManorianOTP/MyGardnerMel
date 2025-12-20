@@ -19,7 +19,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* Improve tap highlight on mobile */
-  -webkit-tap-highlight-color: rgba(20, 82, 51, 0.1);
+  -webkit-tap-highlight-color: rgba(226, 184, 41, 0.2);
 }
 
 /* Ensure links in buttons work properly */
@@ -53,7 +53,7 @@ body {
 
 /* Enhanced keyboard focus styles for accessibility */
 *:focus-visible {
-  outline: 3px solid #44a569;
+  outline: 3px solid #e2b829;
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -63,7 +63,7 @@ a:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 3px solid #44a569;
+  outline: 3px solid #e2b829;
   outline-offset: 2px;
 }
 

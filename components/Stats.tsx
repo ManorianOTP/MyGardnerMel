@@ -34,7 +34,7 @@ export function Stats() {
                   size={80}
                   radius="md"
                   variant="light"
-                  color="green.9"
+                  color="white"
                   className={classes.icon}
                   aria-hidden="true"
                 >

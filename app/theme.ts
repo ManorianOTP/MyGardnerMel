@@ -1,34 +1,34 @@
 import { createTheme } from '@mantine/core';
 
 export const theme = createTheme({
-  primaryColor: 'green',
+  primaryColor: 'gold',
   colors: {
-    green: [
-      '#e7f5ed',
-      '#d0e8da',
-      '#a8d4ba',
-      '#7ec098',
-      '#5baf7c',
-      '#44a569',
-      '#36a15f',
-      '#278d4e',
-      '#1a7d43',
-      '#145233', // Primary dark green from original site
+    gold: [
+      '#fef9e7',
+      '#fcf3d0',
+      '#f9e8a6',
+      '#f5dc78',
+      '#f1d150',
+      '#edc836',
+      '#e2b829', // Main golden yellow
+      '#c9a424',
+      '#b4921f',
+      '#9e7f1a',
     ],
     cream: [
-      '#fcfbf0',
-      '#f7f5e6',
-      '#f0ecd3',
-      '#e9e3c0',
-      '#e2dbb0',
-      '#dcd4a2',
-      '#d6ce97',
-      '#cfc889',
-      '#c9c37f',
-      '#e2e1cf', // Original site background color
+      '#fdfcf9',
+      '#faf8f3',
+      '#f5f1e8', // Main cream background
+      '#f0ecdf',
+      '#ebe7d6',
+      '#e6e2cd',
+      '#e1ddc4',
+      '#dcd8bb',
+      '#d7d3b2',
+      '#d2cea9',
     ],
   },
-  primaryShade: 9,
+  primaryShade: 6,
   fontFamily: 'var(--font-rubik), -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif',
   headings: {
     fontFamily: 'var(--font-rubik), -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif',

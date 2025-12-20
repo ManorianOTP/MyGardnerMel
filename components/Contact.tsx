@@ -57,7 +57,7 @@ export function Contact() {
       notifications.show({
         title: 'Message Sent Successfully!',
         message: "Thank you for reaching out! I'll review your message and get back to you within 24 hours.",
-        color: 'green',
+        color: 'gold',
         autoClose: 5000,
       });
 
@@ -92,7 +92,7 @@ export function Contact() {
                 <Group gap="md" wrap="nowrap" align="flex-start">
                   <IconMapPin size={24} className={classes.icon} />
                   <Box style={{ flex: 1 }}>
-                    <Text fw={600} c="green.9">Service Area</Text>
+                    <Text fw={600} c="gold.6">Service Area</Text>
                     <Text size="sm" c="dimmed">
                       Norwich and surrounding areas (20km radius)
                     </Text>
@@ -102,7 +102,7 @@ export function Contact() {
                 <Group gap="md" wrap="nowrap" align="flex-start">
                   <IconPhone size={24} className={classes.icon} />
                   <Box style={{ flex: 1 }}>
-                    <Text fw={600} c="green.9">Phone</Text>
+                    <Text fw={600} c="gold.6">Phone</Text>
                     <Text
                       size="sm"
                       c="dimmed"
@@ -118,7 +118,7 @@ export function Contact() {
                 <Group gap="md" wrap="nowrap" align="flex-start">
                   <IconMail size={24} className={classes.icon} />
                   <Box style={{ flex: 1 }}>
-                    <Text fw={600} c="green.9">Email</Text>
+                    <Text fw={600} c="gold.6">Email</Text>
                     <Text
                       size="sm"
                       c="dimmed"
@@ -142,11 +142,11 @@ export function Contact() {
                 overlayProps={{
                   radius: 'sm',
                   blur: 2,
-                  color: '#fcfbf0',
+                  color: '#f5f1e8',
                   opacity: 0.7
                 }}
                 loaderProps={{
-                  color: 'green.9',
+                  color: 'gold.6',
                   size: 'lg',
                   type: 'dots'
                 }}
@@ -223,7 +223,7 @@ export function Contact() {
                     size="lg"
                     fullWidth
                     leftSection={isSubmitting ? null : <IconSend size={20} />}
-                    color="green.9"
+                    color="gold.6"
                     loading={isSubmitting}
                     disabled={isSubmitting}
                     className={classes.submitButton}

@@ -70,7 +70,7 @@ export function Services() {
                     size={60}
                     radius="md"
                     variant="light"
-                    color="green.9"
+                    color="gold.6"
                     className={classes.icon}
                   >
                     <service.icon size={30} stroke={1.5} />

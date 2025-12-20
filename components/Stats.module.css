@@ -1,6 +1,6 @@
 .section {
   padding: 4rem 1rem;
-  background: linear-gradient(135deg, #145233 0%, #1a7d43 100%);
+  background: linear-gradient(135deg, #e2b829 0%, #c9a424 100%);
   color: white;
 }
 
@@ -9,20 +9,20 @@
 }
 
 .icon {
-  background-color: rgba(252, 251, 240, 0.1);
-  border: 2px solid rgba(252, 251, 240, 0.3);
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .value {
   font-size: 3rem;
   font-weight: 700;
-  color: #fcfbf0;
+  color: #ffffff;
   line-height: 1;
 }
 
 .label {
   font-size: 1.1rem;
-  color: #d0e8da;
+  color: #fef9e7;
   font-weight: 500;
 }
 

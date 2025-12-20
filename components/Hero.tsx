@@ -26,21 +26,34 @@ export function Hero() {
           <Box className={classes.buttons}>
             <Button
               size="lg"
-              variant="filled"
-              color="green.9"
+              variant="white"
               leftSection={<IconMail size={20} />}
               component="a"
               href="#contact"
+              className={classes.quoteButton}
+              styles={{
+                root: {
+                  fontWeight: 600,
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)'
+                }
+              }}
             >
               Get a Free Quote
             </Button>
             <Button
               size="lg"
-              variant="outline"
-              color="green.9"
+              variant="filled"
+              color="gold.9"
               leftSection={<IconPhone size={20} />}
               component="a"
               href="tel:+447927491042"
+              className={classes.callButton}
+              styles={{
+                root: {
+                  fontWeight: 600,
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)'
+                }
+              }}
             >
               Call Now
             </Button>

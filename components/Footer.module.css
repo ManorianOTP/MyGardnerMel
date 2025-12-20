@@ -1,6 +1,6 @@
 .footer {
-  background-color: #145233;
-  color: #fcfbf0;
+  background-color: #9e7f1a;
+  color: #ffffff;
   padding: 2rem 0;
   overflow: hidden;
   position: relative;
@@ -21,7 +21,7 @@
 }
 
 .copyright {
-  color: rgba(252, 251, 240, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.875rem;
   margin: 0;
 }
@@ -40,13 +40,13 @@
   height: 40px;
   border-radius: 8px;
   transition: background-color 0.2s ease;
-  color: #fcfbf0;
+  color: #ffffff;
   overflow: hidden;
   position: relative;
 }
 
 .socialLink:hover {
-  background-color: rgba(252, 251, 240, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .socialLink svg {

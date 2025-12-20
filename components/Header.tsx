@@ -31,7 +31,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               variant="subtle"
-              color="green.9"
+              c="white"
               leftSection={<IconBrandInstagram size={20} />}
               px="sm"
               aria-label="Instagram"
@@ -45,7 +45,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               variant="subtle"
-              color="green.9"
+              c="white"
               leftSection={<IconBrandFacebook size={20} />}
               px="sm"
               aria-label="Facebook"
@@ -56,8 +56,7 @@ export function Header() {
             <Button
               component="a"
               href="#contact"
-              variant="filled"
-              color="green.9"
+              variant="white"
               leftSection={<IconMail size={20} />}
               px="sm"
               aria-label="Get in Touch"

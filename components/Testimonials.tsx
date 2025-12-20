@@ -101,7 +101,7 @@ export function Testimonials () {
                       <Rating
                         value={testimonial.rating}
                         readOnly
-                        color='green.9'
+                        color='gold.6'
                       />
                     </Box>
 
@@ -112,11 +112,11 @@ export function Testimonials () {
                         gap: '0.75rem'
                       }}
                     >
-                      <Avatar color='green.9' radius='xl' size='lg'>
+                      <Avatar color='gold.6' radius='xl' size='lg'>
                         {testimonial.avatar}
                       </Avatar>
                       <Box>
-                        <Text fw={600} size='sm' c='green.9'>
+                        <Text fw={600} size='sm' c='gold.6'>
                           {testimonial.name}
                         </Text>
                         <Text size='xs' c='dimmed'>

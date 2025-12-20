@@ -1,6 +1,6 @@
 .section {
   padding: 4rem 1rem;
-  background-color: #fcfbf0;
+  background-color: #ffffff;
 }
 
 .header {
@@ -9,7 +9,7 @@
 }
 
 .title {
-  color: #145233;
+  color: #9e7f1a;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -18,22 +18,23 @@
 .subtitle {
   max-width: 600px;
   margin: 0 auto;
+  color: #6b5d15;
 }
 
 .card {
   transition: transform 0.2s, box-shadow 0.2s;
-  background-color: white;
-  border-color: #e2e1cf;
+  background-color: #f5f1e8;
+  border-color: #e2b829;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(20, 82, 51, 0.1);
+  box-shadow: 0 8px 16px rgba(226, 184, 41, 0.2);
 }
 
 .imageSection {
   height: 250px;
-  background: linear-gradient(135deg, #e2e1cf 0%, #d0e8da 100%);
+  background: linear-gradient(135deg, #f5dc78 0%, #e2b829 100%);
 }
 
 .imagePlaceholder {
@@ -41,7 +42,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #145233;
+  color: #9e7f1a;
 }
 
 @media (max-width: 768px) {

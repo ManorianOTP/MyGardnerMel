@@ -1,5 +1,5 @@
 .hero {
-  background: linear-gradient(135deg, #e2e1cf 0%, #fcfbf0 100%);
+  background: linear-gradient(135deg, #e2b829 0%, #f1d150 100%);
   padding: 6rem 1rem;
   position: relative;
   overflow: hidden;
@@ -13,8 +13,8 @@
   right: 0;
   bottom: 0;
   background-image:
-    radial-gradient(circle at 20% 50%, rgba(20, 82, 51, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(20, 82, 51, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(226, 184, 41, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(226, 184, 41, 0.3) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -29,22 +29,23 @@
 .title {
   font-size: 4rem;
   font-weight: 700;
-  color: #145233;
+  color: #ffffff;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
 
 .subtitle {
-  color: #145233;
+  color: #ffffff;
   font-weight: 500;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .description {
-  color: #2d5a3d;
+  color: #ffffff;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
+  opacity: 0.9;
 }
 
 .buttons {
@@ -52,6 +53,29 @@
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.buttons button {
+  transition: all 0.3s ease;
+}
+
+.buttons button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+.buttons button:active {
+  transform: translateY(-1px);
+}
+
+.quoteButton:hover {
+  background-color: #1a3a52 !important;
+  color: #ffffff !important;
+}
+
+.callButton:hover {
+  background-color: #d4a520 !important;
+  filter: brightness(1.15);
 }
 
 @media (max-width: 768px) {

@@ -1,6 +1,6 @@
 .section {
   padding: 4rem 1rem;
-  background-color: white;
+  background-color: #f5f1e8;
 }
 
 .header {
@@ -9,7 +9,7 @@
 }
 
 .title {
-  color: #145233;
+  color: #9e7f1a;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -18,19 +18,21 @@
 .subtitle {
   max-width: 600px;
   margin: 0 auto;
+  color: #6b5d15;
 }
 
 .card {
-  background-color: #fcfbf0;
-  border: 2px solid #e2e1cf;
+  background-color: #ffffff;
+  border: 2px solid #e2b829;
   transition: transform 0.2s, box-shadow 0.2s;
   height: 100%;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(20, 82, 51, 0.1);
-  border-color: #145233;
+  box-shadow: 0 8px 16px rgba(226, 184, 41, 0.2);
+  border-color: #c9a424;
+  background-color: #fef9e7;
 }
 
 .iconHeader {
@@ -45,7 +47,7 @@
 }
 
 .cardTitle {
-  color: #145233;
+  color: #9e7f1a;
   margin: 0;
 }
 

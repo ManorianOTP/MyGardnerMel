@@ -89,10 +89,10 @@ export function Gallery() {
                 </Card.Section>
 
                 <Stack gap="sm" mt="md">
-                  <Badge color="green.9" variant="light">
+                  <Badge color="gold.6" variant="light">
                     {project.badge}
                   </Badge>
-                  <Text fw={600} size="lg" c="green.9">
+                  <Text fw={600} size="lg" c="gold.6">
                     {project.title}
                   </Text>
                   <Text size="sm" c="dimmed" style={{ whiteSpace: 'pre-line' }}>
