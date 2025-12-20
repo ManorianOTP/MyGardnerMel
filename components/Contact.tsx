@@ -1,17 +1,16 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Container, Title, Text, TextInput, Textarea, Button, Group, Box, Stack, Grid, Alert, LoadingOverlay } from '@mantine/core';
-import { IconMail, IconPhone, IconMapPin, IconSend, IconCheck, IconAlertCircle } from '@tabler/icons-react';
+import { Container, Title, Text, TextInput, Textarea, Button, Group, Box, Stack, Grid, LoadingOverlay } from '@mantine/core';
+import { IconMail, IconPhone, IconMapPin, IconSend } from '@tabler/icons-react';
 import { useForm } from '@mantine/form';
-import { zodResolver } from 'mantine-form-zod-resolver';
+import { zod4Resolver } from 'mantine-form-zod-resolver';
+import { notifications } from '@mantine/notifications';
 import { contactFormSchema, type ContactFormData } from '@/lib/validations/contact';
 import classes from './Contact.module.css';
 
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
   const formRef = useRef<HTMLDivElement>(null);
 
   const form = useForm<ContactFormData>({
@@ -21,7 +20,7 @@ export function Contact() {
       phone: '',
       message: '',
     },
-    validate: zodResolver(contactFormSchema),
+    validate: zod4Resolver(contactFormSchema),
   });
 
   useEffect(() => {
@@ -39,20 +38,8 @@ export function Contact() {
     }
   }, []);
 
-  useEffect(() => {
-    // Auto-clear success message when user starts typing again
-    if (submitStatus === 'success') {
-      const hasValues = form.values.name || form.values.email || form.values.phone || form.values.message;
-      if (hasValues) {
-        setSubmitStatus('idle');
-      }
-    }
-  }, [form.values, submitStatus]);
-
   const handleSubmit = async (values: ContactFormData) => {
     setIsSubmitting(true);
-    setSubmitStatus('idle');
-    setErrorMessage('');
 
     try {
       const response = await fetch('/api/contact', {
@@ -67,21 +54,21 @@ export function Contact() {
         throw new Error(data.error || 'Failed to send message');
       }
 
-      setSubmitStatus('success');
-      form.reset();
+      notifications.show({
+        title: 'Message Sent Successfully!',
+        message: "Thank you for reaching out! I'll review your message and get back to you within 24 hours.",
+        color: 'green',
+        autoClose: 5000,
+      });
 
-      // Scroll to top of form to show success message on mobile
-      if (window.innerWidth < 768 && formRef.current) {
-        setTimeout(() => {
-          formRef.current?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }, 100);
-      }
+      form.reset();
     } catch (error) {
-      setSubmitStatus('error');
-      setErrorMessage(error instanceof Error ? error.message : 'Failed to send message');
+      notifications.show({
+        title: 'Error',
+        message: error instanceof Error ? error.message : 'Failed to send message',
+        color: 'red',
+        autoClose: 5000,
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -167,56 +154,12 @@ export function Contact() {
               <form
                 onSubmit={form.onSubmit(handleSubmit)}
                 aria-busy={isSubmitting}
-                aria-describedby={submitStatus === 'error' ? 'form-error' : undefined}
               >
                 <Stack gap="md">
                   {isSubmitting && (
                     <div role="status" aria-live="polite" className={classes['sr-only']}>
                       Sending your message, please wait...
                     </div>
-                  )}
-                  {submitStatus === 'success' && (
-                    <Alert
-                      icon={<IconCheck size={20} />}
-                      color="green"
-                      title="Message Sent Successfully!"
-                      withCloseButton
-                      onClose={() => setSubmitStatus('idle')}
-                      role="status"
-                      aria-live="polite"
-                      className={classes.successAlert}
-                      styles={{
-                        root: {
-                          backgroundColor: '#e8f5e9',
-                          border: '2px solid #145233',
-                        },
-                        title: {
-                          color: '#145233',
-                          fontSize: '1.1rem',
-                          fontWeight: 600,
-                        },
-                        message: {
-                          color: '#2d5a3d',
-                        }
-                      }}
-                    >
-                      <Text size="sm">
-                        Thank you for reaching out! I'll review your message and get back to you within 24 hours.
-                      </Text>
-                    </Alert>
-                  )}
-
-                  {submitStatus === 'error' && (
-                    <Alert
-                      id="form-error"
-                      icon={<IconAlertCircle size={16} />}
-                      color="red"
-                      title="Error"
-                      role="alert"
-                      aria-live="assertive"
-                    >
-                      {errorMessage}
-                    </Alert>
                   )}
 
                   <TextInput

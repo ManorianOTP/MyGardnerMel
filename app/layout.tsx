@@ -1,9 +1,11 @@
 import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
+import '@mantine/notifications/styles.css';
 import './globals.css';
 import type { Metadata, Viewport } from 'next';
 import { Rubik } from 'next/font/google';
 import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/core';
+import { Notifications } from '@mantine/notifications';
 import { theme } from './theme';
 
 const rubik = Rubik({ subsets: ['latin'], variable: '--font-rubik' });
@@ -109,6 +111,7 @@ export default function RootLayout({
       </head>
       <body>
         <MantineProvider theme={theme}>
+          <Notifications position="top-right" zIndex={1000} />
           {children}
         </MantineProvider>
       </body>
