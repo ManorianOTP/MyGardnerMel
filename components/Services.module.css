@@ -33,12 +33,20 @@
   border-color: #145233;
 }
 
-.icon {
+.iconHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.icon {
+  flex-shrink: 0;
 }
 
 .cardTitle {
   color: #145233;
+  margin: 0;
 }
 
 .grid {

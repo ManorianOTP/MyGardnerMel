@@ -65,19 +65,21 @@ export function Services() {
                 role="article"
                 aria-label={`${service.title}: ${service.description}`}
               >
-                <ThemeIcon
-                  size={60}
-                  radius="md"
-                  variant="light"
-                  color="green.9"
-                  className={classes.icon}
-                >
-                  <service.icon size={30} stroke={1.5} />
-                </ThemeIcon>
+                <Box className={classes.iconHeader}>
+                  <ThemeIcon
+                    size={60}
+                    radius="md"
+                    variant="light"
+                    color="green.9"
+                    className={classes.icon}
+                  >
+                    <service.icon size={30} stroke={1.5} />
+                  </ThemeIcon>
 
-                <Text fw={600} size="lg" mt="md" className={classes.cardTitle}>
-                  {service.title}
-                </Text>
+                  <Text fw={600} size="lg" className={classes.cardTitle}>
+                    {service.title}
+                  </Text>
+                </Box>
 
                 <Text size="sm" c="dimmed" mt="sm">
                   {service.description}
